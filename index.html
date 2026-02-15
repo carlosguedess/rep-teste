@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Guedes - Portfólio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        nav h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #667eea;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #764ba2;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #667eea;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            color: #333;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .skill-card h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        .skill-card p {
+            color: #666;
+            margin: 0;
+        }
+
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Carlos Guedes</h1>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Bem-vindo ao meu Portfólio</h2>
+            <p>Desenvolvedor em formação | Apaixonado por tecnologia</p>
+            <a href="#projetos" class="btn btn-secondary">Ver meus projetos</a>
+            <a href="#contato" class="btn btn-secondary">Entre em contato</a>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <h2>Sobre Mim</h2>
+                <div class="about-content">
+                    <div>
+                        <h3>Quem sou eu?</h3>
+                        <p>Olá! Sou Carlos Guedes, um desenvolvedor em formação com paixão por criar soluções web modernas e responsivas. Estou constantemente aprendendo novas tecnologias e buscando melhorar minhas habilidades de programação.</p>
+                        <p>Com foco em desenvolvimento front-end e back-end, trabalho para criar experiências de usuário excelentes e código limpo e eficiente.</p>
+                    </div>
+                    <div>
+                        <h3>Minha Jornada</h3>
+                        <p>Comecei a estudar desenvolvimento web com HTML, CSS e JavaScript, expandindo meus conhecimentos em frameworks modernos e práticas de desenvolvimento ágil.</p>
+                        <p>Tenho interesse particular em aprender as melhores práticas de Git e controle de versão, que são essenciais para trabalho em equipe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos">
+            <div class="container">
+                <h2>Meus Projetos</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Rep-Teste</h3>
+                        <p>Repositório de testes para aprender Git e controle de versão. Praticando comandos git e workflow de desenvolvimento.</p>
+                        <a href="#" class="btn">Ver Projeto</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Nome do Projeto 2</h3>
+                        <p>Descrição do seu projeto. Fale sobre as tecnologias utilizadas e o que você aprendeu com este projeto.</p>
+                        <a href="#" class="btn">Ver Projeto</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Nome do Projeto 3</h3>
+                        <p>Descrição do seu projeto. Compartilhe os detalhes, desafios e soluções implementadas neste projeto.</p>
+                        <a href="#" class="btn">Ver Projeto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades">
+            <div class="container">
+                <h2>Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Frontend</h3>
+                        <p>HTML5 • CSS3 • JavaScript • Responsivo</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Ferramentas</h3>
+                        <p>Git • GitHub • VS Code • npm</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Conceitos</h3>
+                        <p>Semântica Web • Git Workflow • Boas Práticas</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Aprendendo</h3>
+                        <p>Backend • Frameworks JS • Banco de Dados</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container contact-section">
+                <h2>Entre em Contato</h2>
+                <p>Estou sempre aberto a novas oportunidades e para discutir projetos interessantes!</p>
+                <div class="contact-links">
+                    <a href="mailto:seu-email@gmail.com" class="btn">Email</a>
+                    <a href="https://github.com/carlosguedess" target="_blank" class="btn">GitHub</a>
+                    <a href="https://linkedin.com/in/seu-perfil" target="_blank" class="btn">LinkedIn</a>
+                    <a href="https://twitter.com/seu-perfil" target="_blank" class="btn">Twitter</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Carlos Guedes. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
